@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prog122_SpecialExample
 {
-    internal class CustomErrors
+    public class CustomErrors
     {
 
         //fields
@@ -24,8 +24,18 @@ namespace Prog122_SpecialExample
 
 
         //properties
-        public string ErrorCode { get => _errorCode; }
-        public string ErrorMessage { get => _errorMessage; }
+        public string errorcode { get => _errorCode; }
+        public string errormessage { get => _errorMessage; }
+
+        //New : override TOString()
+        //this will allow us to change what displays
+        //when we call the ToString() on instanced object
+
+
+        public override string ToString()
+        {
+            return $"{this._errorCode} - {this._errorMessage}";
+        }
         
 
 
